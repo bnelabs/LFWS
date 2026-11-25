@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06191c">
+  <meta name="description" content="LupaFrame is developing a 3D consultation viewer for clinics and private practices, with plans for cinematic anatomy, connected imaging and AI-assisted review.">
+  <link rel="icon" href="media/lupaframe-mark.webp" type="image/webp">
+  <link rel="preload" href="fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+  <title>LupaFrame | 3D consultation for clinics</title>
+</head>
+<body id="top">
+  <a class="skip-link" href="#experience">Skip to content</a>
+  <header class="masthead content-width">
+    <a class="wordmark" href="#top" aria-label="LupaFrame home">LupaFrame</a>
+    <nav aria-label="Main navigation">
+      <a href="#experience">Concept</a>
+      <a href="#technology">Technology</a>
+      <a href="#vision">Vision</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="experience" aria-labelledby="hero-heading">
+      <div class="hero-copy content-width">
+        <h1 id="hero-heading">Follow the anatomy.</h1>
+        <p>LupaFrame is developing a 3D viewer to help clinics and private practices explain findings during consultations.</p>
+      </div>
+
+      <div class="filmstrip" role="group" aria-label="Cinematic walkthrough concept">
+        <figure>
+          <button class="film-frame" type="button" aria-haspopup="dialog" aria-label="Enlarge the whole person frame">
+            <img src="media/whole-person.webp" width="271" height="528" alt="A woman standing with part of her shoulder and head made translucent.">
+          </button>
+          <figcaption>Whole person</figcaption>
+        </figure>
+        <figure>
+          <button class="film-frame" type="button" aria-haspopup="dialog" aria-label="Enlarge the area of interest frame">
+            <img src="media/area-of-interest.webp" width="466" height="528" alt="A close portrait showing folds of the brain through the side of the skull above the ear.">
+          </button>
+          <figcaption>Area of interest</figcaption>
+        </figure>
+        <figure>
+          <button class="film-frame" type="button" aria-haspopup="dialog" aria-label="Enlarge the anatomical detail frame">
+            <img src="media/anatomical-detail.webp" width="715" height="528" fetchpriority="high" alt="A close anatomy study showing a portion of the brain inside the skull, with the ear still in view.">
+          </button>
+          <figcaption>Anatomical detail</figcaption>
+        </figure>
+      </div>
+
+      <div class="film-meta content-width">
+        <p>Illustrative frames for the proposed walkthrough</p>
+      </div>
+    </section>
+
+    <section class="vision content-width" id="vision" aria-labelledby="vision-heading">
+      <div class="vision-intro">
+        <h2 id="vision-heading">Where LupaFrame goes next</h2>
+        <p>We plan to pair advanced imaging with cinematic 3D visualization.</p>
+      </div>
+
+      <section class="roadmap-section" id="technology" aria-labelledby="technology-heading">
+        <div class="section-heading">
+          <h3 id="technology-heading">From scan to consultation</h3>
+          <p>Planned methods</p>
+        </div>
+        <div class="technology-layout">
+          <figure class="technology-figure">
+            <img src="media/translucent-anatomy.webp" width="1536" height="1024" loading="lazy" alt="High-angle portrait of a woman with brain folds visible through the translucent side of her skull.">
+            <figcaption>Illustrative anatomy study</figcaption>
+          </figure>
+          <dl class="technology-list">
+            <div>
+              <dt>Align the anatomy</dt>
+              <dd>Check scale, laterality and landmarks against the source scans.</dd>
+            </div>
+            <div>
+              <dt>Validate the contours</dt>
+              <dd>Measure boundary and volume error against clinician-reviewed cases held out from training.</dd>
+            </div>
+            <div>
+              <dt>Reveal anatomy in 3D</dt>
+              <dd>Pair GPU volume rendering with physically based materials and selective translucency.</dd>
+            </div>
+            <div>
+              <dt>Connect clinical systems</dt>
+              <dd>DICOMweb for scans, DICOM SEG for contours and HL7 FHIR for approved summaries.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="roadmap-section" aria-labelledby="decision-heading">
+        <div class="section-heading">
+          <h3 id="decision-heading">What changed between scans?</h3>
+          <p>Proposed AI workflow</p>
+        </div>
+        <div class="review-steps">
+          <details name="review" open>
+            <summary>Suggest a contour</summary>
+            <p>Link AI-suggested contours to their source images.</p>
+          </details>
+          <details name="review">
+            <summary>Compare scans</summary>
+            <p>Show changes in aligned studies and flag unreliable comparisons.</p>
+          </details>
+          <details name="review">
+            <summary>Clinician sign-off</summary>
+            <p>Clinicians check the evidence and approve summaries before they enter the record.</p>
+          </details>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer content-width">
+    <a class="wordmark" href="#top" aria-label="LupaFrame, back to top">LupaFrame</a>
+    <p>In development for clinics and private practices</p>
+  </footer>
+
+  <dialog class="frame-dialog" id="frame-dialog" aria-labelledby="frame-title" aria-describedby="frame-note">
+    <div class="dialog-header">
+      <h2 id="frame-title"></h2>
+      <form method="dialog"><button class="dialog-button" type="submit" autofocus>Close</button></form>
+    </div>
+    <div class="dialog-art"><img id="frame-image" alt=""></div>
+    <div class="dialog-footer">
+      <p id="frame-note">Illustrative frames for the proposed walkthrough</p>
+      <div class="dialog-navigation" role="group" aria-label="Concept frames">
+        <button class="dialog-button" id="frame-prev" type="button">Previous</button>
+        <button class="dialog-button" id="frame-next" type="button">Next</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
